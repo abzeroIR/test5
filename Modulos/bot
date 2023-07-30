@@ -18,7 +18,7 @@ fun_menu() {
         env_msg="<b>◈──────────────────◈</b>\n"
         env_msg+="<b>� 🔰zero panel🔰 BOT �</b>\n"
         env_msg+="<b>◈──────────────────◈</b>\n\n"
-        env_msg+="⚠️ <i>SELECT AN OPTION BELOW!</i>\n\n"
+        env_msg+="⚠️ <i>یک گزینه را انتخاب کنید!</i>\n\n"
 	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} --text "$env_msg" \
             --reply_markup "$keyboard1" \
             --parse_mode html
@@ -26,7 +26,7 @@ fun_menu() {
     }
     [[ -d /etc/bot/suspensos/${message_from_username} ]] && {
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-            --text "$(echo -e "🚫 YOU ARE SUSPENDED 🚫\n\nCONTACT THE ADMINISTRATOR")"
+            --text "$(echo -e "🚫 دسترسی شما محدود شده است 🚫\n\nبا مدیریت ارتباط برقرار کنید")"
         return 0
     }
     if [[ "$(grep -w "${message_from_username}" $ativos | grep -wc 'revenda')" != '0' ]]; then
@@ -34,7 +34,7 @@ fun_menu() {
         env_msg="<b>◈──────────────────◈</b>\n"
         env_msg+="<b>� 🔰zero panel🔰 BOT �</b>\n"
         env_msg+="<b>◈──────────────────◈</b>\n\n"
-        env_msg+="⚠️ <i>SELECT AN OPTION BELOW!</i>\n\n"
+        env_msg+="⚠️ <i>یک گزینه را انتخاب کنید!</i>\n\n"
 	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} --text "$env_msg" \
             --reply_markup "$keyboard1" \
             --parse_mode html
@@ -44,14 +44,14 @@ fun_menu() {
         env_msg="<b>◈──────────────────◈</b>\n"
         env_msg+="<b>� 🔰zero panel🔰 BOT �</b>\n"
         env_msg+="<b>◈──────────────────◈</b>\n\n"
-        env_msg+="⚠️ <i>SELECT AN OPTION BELOW!</i>\n\n"
+        env_msg+="⚠️ <i>یک گزینه را انتخاب کنید!</i>\n\n"
 	ShellBot.sendMessage --chat_id ${message_chat_id[$id]} --text "$env_msg" \
             --reply_markup "$keyboard1" \
             --parse_mode html
         return 0
     else
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
-            --text "$(echo -e 🚫 ACCESS DENIED 🚫)"
+            --text "$(echo -e 🚫 دسترسی محدود شده است 🚫)"
         return 0
     fi
 }
@@ -69,29 +69,29 @@ fun_ajuda() {
         env_msg="<b>◈──────────────────◈</b>\n"
         env_msg+="<b>� 🔰zero panel🔰 BOT �</b>\n"
         env_msg+="<b>◈──────────────────◈</b>\n\n"
-        env_msg+="⚠️ <b>Available Commands</b>\n\n"
-        env_msg+="[<b>01</b>] /menu = Display menu\n"
-        env_msg+="[<b>02</b>] /info = Display information\n"
-        env_msg+="[<b>03</b>] /help = Information about options\n\n"
-        env_msg+="⚠️ <b>Available Options</b>\n\n"
-        env_msg+="• <u>CREATE USER</u> = Create ssh user\n\n"
-        env_msg+="• <u>CREATE TEST</u> = Create ssh test\n\n"
-        env_msg+="• <u>REMOVE</u> = Remove ssh user\n\n"
-        env_msg+="• <u>USER INFO</u> = User Information\n\n"
-        env_msg+="• <u>ONLINE USERS</u> = Display Online Users\n\n"
-        env_msg+="• <u>VPS INFO</u> = Server Information\n\n"
-        env_msg+="• <u>CHANGE PASSWORD</u> = Change ssh password\n\n"
-        env_msg+="• <u>CHANGE LIMIT</u> = Change ssh limit\n\n"
-        env_msg+="• <u>CHANGE DATE</u> = Change date ssh\n\n"
-        env_msg+="• <u>EXPIRED</u> = Remove expired ssh\n\n"
-        env_msg+="• <u>BACKUP</u> = Create ssh Backup and resellers\n\n"
-        env_msg+="• <u>OPTIMIZE</u> = Clear cache - ram\n\n"
-        env_msg+="• <u>SPEEDTEST</u> = Connection test\n\n"
-        env_msg+="• <u>FILES</u> = Host Files\n\n"
-        env_msg+="• <u>RESALE</u> = Manage Resellers\n\n"
-        env_msg+="• <u>AUTOBACKUP</u> = On/Off Automatic Backup\n\n"
-        env_msg+="• <u>REPORT</u> = Information about resellers\n\n"
-        env_msg+="• <u>HELP</u> = Information about options\n\n"
+        env_msg+="⚠️ <b>کاربرد دستورات</b>\n\n"
+        env_msg+="[<b>01</b>] /menu = نمایش منو\n"
+        env_msg+="[<b>02</b>] /info = نمایش اطلاعات\n"
+        env_msg+="[<b>03</b>] /help = اطلاعات در مورد گزینه ها\n\n"
+        env_msg+="⚠️ <b>کاربرد دستورات</b>\n\n"
+        env_msg+="• <u>CREATE USER</u> = ساخت کاربر چدید\n\n"
+        env_msg+="• <u>CREATE TEST</u> = ساخت اکانت تست\n\n"
+        env_msg+="• <u>REMOVE</u> = حذف کاربر\n\n"
+        env_msg+="• <u>USER INFO</u> = اطلاعات کاربر ها\n\n"
+        env_msg+="• <u>ONLINE USERS</u> = نمایش کاربران آنلاین\n\n"
+        env_msg+="• <u>VPS INFO</u> = اطلاعات سرور\n\n"
+        env_msg+="• <u>CHANGE PASSWORD</u> = تغییر پسورد کاربر ها\n\n"
+        env_msg+="• <u>CHANGE LIMIT</u> = تغییر محدودیت اتصال کاربر ها\n\n"
+        env_msg+="• <u>CHANGE DATE</u> = تغییر تاریخ اتمام کاربر ها\n\n"
+        env_msg+="• <u>EXPIRED</u> = حذف کاربران منقضی شده\n\n"
+        env_msg+="• <u>BACKUP</u> = ساخت بکاپ کامل\n\n"
+        env_msg+="• <u>OPTIMIZE</u> = بهینه سازیه سرور - ram\n\n"
+        env_msg+="• <u>SPEEDTEST</u> = تست سرعت اتصال\n\n"
+        env_msg+="• <u>FILES</u> = فایل های میزبان\n\n"
+        env_msg+="• <u>RESALE</u> = مدریت بازاریاب ها\n\n"
+        env_msg+="• <u>AUTOBACKUP</u> = روشن/خاموش کردن بکاپ گیری خودکار\n\n"
+        env_msg+="• <u>REPORT</u> = اطلاعات در مورد بازاریاب ها\n\n"
+        env_msg+="• <u>HELP</u> = اطلاعات در مورد گزینه ها\n\n"
         ShellBot.sendMessage --chat_id $id_chatuser \
             --text "$(echo -e $env_msg)" \
             --parse_mode html
@@ -109,23 +109,23 @@ fun_ajuda() {
         env_msg="<b>◈──────────────────◈</b>\n"
         env_msg+="<b>� 🔰zero panel🔰 BOT �</b>\n"
         env_msg+="<b>◈──────────────────◈</b>\n\n"
-        env_msg+="⚠️ <b>Available Commands</b>\n\n"
-        env_msg+="[<b>01</b>] /menu = Display menu\n"
-        env_msg+="[<b>02</b>] /info = Display information\n"
-        env_msg+="[<b>03</b>] /help = Information about options\n\n"
-        env_msg+="⚠️ <b>Available Options</b>\n\n"
-        env_msg+="• <u>CREATE USER</u> = Create ssh user\n\n"
-        env_msg+="• <u>CREATE TEST</u> = Create ssh test\n\n"
-        env_msg+="• <u>REMOVE</u> = Remove ssh user\n\n"
-        env_msg+="• <u>USER INFO</u> = User Information\n\n"
-        env_msg+="• <u>ONLINE USERS</u> = Display Online Users\n\n"
-        env_msg+="• <u>CHANGE PASSWORD</u> = Change ssh password\n\n"
-        env_msg+="• <u>CHANGE LIMIT</u> = Change ssh limit\n\n"
-        env_msg+="• <u>CHANGE DATE</u> = Change date ssh\n\n"
-        env_msg+="• <u>EXPIRED</u> = Remove expired ssh\n\n"
-        env_msg+="• <u>RESALE</u> = Manage Resellers\n\n"
-        env_msg+="• <u>REPORT</u> = Information about resellers\n\n"
-        env_msg+="• <u>HELP</u> = Information about options\n\n"
+        env_msg+="⚠️ <b>کاربرد دستورات</b>\n\n"
+        env_msg+="[<b>01</b>] /menu = نمایش منو\n"
+        env_msg+="[<b>02</b>] /info = نمایش اطلاعات\n"
+        env_msg+="[<b>03</b>] /help = اطلاعات در مورد گزینه ها\n\n"
+        env_msg+="⚠️ <b>کاربرد دستورات</b>\n\n"
+        env_msg+="• <u>CREATE USER</u> = ساخت کاربر چدید\n\n"
+        env_msg+="• <u>CREATE TEST</u> = ساخت اکانت تست\n\n"
+        env_msg+="• <u>REMOVE</u> = حذف کاربر\n\n"
+        env_msg+="• <u>USER INFO</u> = اطلاعات کاربر ها\n\n"
+        env_msg+="• <u>ONLINE USERS</u> = نمایش کاربران آنلاین\n\n"
+        env_msg+="• <u>CHANGE PASSWORD</u> = تغییر پسورد کاربر ها\n\n"
+        env_msg+="• <u>CHANGE LIMIT</u> = تغییر محدودیت اتصال کاربر ها\n\n"
+        env_msg+="• <u>CHANGE DATE</u> = تغییر تاریخ اتمام کاربر ها\n\n"
+        env_msg+="• <u>EXPIRED</u> = حذف کاربران منقضی شده\n\n"
+        env_msg+="• <u>RESALE</u> = مدریت بازاریاب ها\n\n"
+        env_msg+="• <u>REPORT</u> = اطلاعات در مورد بازاریاب ها\n\n"
+        env_msg+="• <u>HELP</u> = اطلاعات در مورد گزینه ها\n\n"
         ShellBot.sendMessage --chat_id $id_chatuser \
             --text "$(echo -e $env_msg)" \
             --parse_mode html
@@ -137,21 +137,21 @@ fun_ajuda() {
         env_msg="<b>◈──────────────────◈</b>\n"
         env_msg+="<b>� 🔰zero panel🔰 BOT �</b>\n"
         env_msg+="<b>◈──────────────────◈</b>\n\n"
-        env_msg+="⚠️ <b>Available Commands</b>\n\n"
-        env_msg+="[<b>01</b>] /menu = display menu\n"
-        env_msg+="[<b>02</b>] /info = Display information\n"
-        env_msg+="[<b>03</b>] /help = Information about options\n\n"
-        env_msg+="⚠️ <b>Available Options</b>\n\n"
-        env_msg+="• <u>CREATE USER</u> = Create ssh user\n\n"
-        env_msg+="• <u>CREATE TEST</u> = Create ssh test\n\n"
-        env_msg+="• <u>REMOVE</u> = Remove ssh user\n\n"
-        env_msg+="• <u>USER INFO</u> = User information\n\n"
+        env_msg+="⚠️ <b>کاربرد دستورات</b>\n\n"
+        env_msg+="[<b>01</b>] /menu = نمایش منو\n"
+        env_msg+="[<b>02</b>] /info = نمایش اطلاعات\n"
+        env_msg+="[<b>03</b>] /help = اطلاعات در مورد گزینه ها\n\n"
+        env_msg+="⚠️ <b>کاربرد دستورات</b>\n\n"
+        env_msg+="• <u>CREATE USER</u> = ساخت کاربر چدید\\n\n"
+        env_msg+="• <u>CREATE TEST</u> = ساخت اکانت تست\n\n"
+        env_msg+="• <u>REMOVE</u> = حذف کاربر\n\n"
+        env_msg+="• <u>USER INFO</u> = اطلاعات کاربر ها\n\n"
         env_msg+="• <u>ONLINE USERS</u> = Display users online\n\n"
-        env_msg+="• <u>CHANGE PASSWORD</u> = Change ssh password\n\n"
-        env_msg+="• <u>CHANGE LIMIT</u> = Change ssh limit\n\n"
+        env_msg+="• <u>CHANGE PASSWORD</u> = تغییر پسورد کاربر ها\n\n"
+        env_msg+="• <u>CHANGE LIMIT</u> = تغییر محدودیت اتصال کاربر ها\n\n"
         env_msg+="• <u>CHANGE DATE</u> = Change ssh date\n\n"
-        env_msg+="• <u>EXPIRED</u> = Remove expired ssh\n\n"
-        env_msg+="• <u>HELP</u> = Information about options\n\n"
+        env_msg+="• <u>EXPIRED</u> = حذف کاربران منقضی شده\n\n"
+        env_msg+="• <u>HELP</u> = اطلاعات در مورد گزینه ها\n\n"
         ShellBot.sendMessage --chat_id $id_chatuser \
             --text "$(echo -e $env_msg)" \
             --parse_mode html
@@ -440,7 +440,7 @@ ver_users() {
         arq_info=/tmp/$(echo $RANDOM)
         local info_users
         info_users='◈──────────────────◈\n'
-        info_users+='<b>USER INFORMATION</b>\n'
+        info_users+='<b>اطلاعات کاربر ها</b>\n'
         info_users+='◈──────────────────◈\n\n'
         info_users+='⚠️ Displays in the format below:\n\n'
         info_users+='<code>USER PASSWORD DATE LIMIT</code>\n'
@@ -492,7 +492,7 @@ ver_users() {
         arq_info=/tmp/$(echo $RANDOM)
         local info_users
         info_users='◈──────────────────◈\n'
-        info_users+='<b>USER INFORMATION</b>\n'
+        info_users+='<b>اطلاعات کاربر ها</b>\n'
         info_users+='◈──────────────────◈\n\n'
         info_users+='⚠️ Displays in the format below:\n\n'
         info_users+='<code>USER PASSWORD DATE LIMIT</code>\n'
@@ -1741,7 +1741,7 @@ fun_menurevenda() {
     [[ "${callback_query_from_id[$id]}" == "$id_admin" ]] || [[ "$(grep -wc ${callback_query_from_username} $ativos)" != '0' ]] && {
         ShellBot.editMessageText --chat_id ${callback_query_message_chat_id[$id]} \
             --message_id ${callback_query_message_message_id[$id]} \
-            --text "SELECT AN OPTION BELOW:" \
+            --text "یک گزینه را انتخاب کنید:" \
             --reply_markup "$(ShellBot.InlineKeyboardMarkup --button 'menu4')"
         return 0
     }
