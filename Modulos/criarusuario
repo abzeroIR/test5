@@ -249,15 +249,15 @@ fun_edithost() {
     fi
 }
 [[ ! -e /usr/lib/vpsmanager ]] && exit 0
-tput setaf 7;tput setab 4;tput bold;printf '%30s%s%-15s\n' "ejad user jadid";tput sgr0
+tput setaf 7;tput setab 4;tput bold;printf '%30s%s%-15s\n' "Create SSH User";tput sgr0
 echo ""
-echo -ne "\033[1;32mUsername:\033[1;37m ";read اسم کاربر
+echo -ne "\033[1;32mUsername:\033[1;37m ";read username
 [[ -z $username ]] && {
 	echo -e "\n${cor1}Empty or invalid username!${scor}\n"
 	exit 1
 }
 [[ "$(grep -wc $username /etc/passwd)" != '0' ]] && {
-	echo -e "\n${cor1}این کاربر قبلا ساخته شده است!${scor}\n"
+	echo -e "\n${cor1}This user already exists. try another name!${scor}\n"
 	exit 1
 }
 [[ ${username} != ?(+|-)+([a-zA-Z0-9]) ]] && {
